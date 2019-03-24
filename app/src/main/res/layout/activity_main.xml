@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/playbtn"
+        android:layout_width="395dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/colorAccent"
+        android:text="TempTunes"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="39sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/song"
+        android:layout_width="395dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="395dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="100sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/condition" />
+
+    <TextView
+        android:id="@+id/condition"
+        android:layout_width="395dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="76dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/song"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <!--app:layout_constraintTop_toBottomOf="@+id/location"-->
+    tools:ignore="MissingConstraints"
+    tools:layout_editor_absoluteX="126dp" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/location"-->
+    <!--android:layout_width="319dp"-->
+    <!--android:layout_height="116dp"-->
+    <!--android:layout_marginTop="132dp"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--tools:layout_editor_absoluteX="46dp" />-->
+
+</android.support.constraint.ConstraintLayout>
