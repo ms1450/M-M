@@ -42,8 +42,10 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     private static final String CLIENT_ID = "2b24f4707b1442ceb90e2010b8d36d71";
-    private static final String REDIRECT_URI = "maps-n-music-login://callback";
+    private static final String REDIRECT_URI ="http://com.mapsnmusic.login/callback";
     private SpotifyAppRemote mSpotifyAppRemote;
+
+
 
     private Button playbt;
     private String[] location_data;
@@ -57,9 +59,13 @@ public class MainActivity extends AppCompatActivity {
     public String[] low = {"spotify:playlist:37i9dQZF1DWSqmBTGDYngZ", "spotify:playlist:37i9dQZF1DX7KNKjOK0o75", "spotify:playlist:37i9dQZF1DX3YSRoSdA634"};
     private static final String TAG = "MainActivity";
 
+
+
+    private static final int REQUEST_CODE = 1337;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         playbt = (Button) findViewById(R.id.playbtn); // Create Play Button
@@ -138,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
                         .setRedirectUri(REDIRECT_URI)
                         .showAuthView(true)
                         .build();
+
+
         SpotifyAppRemote.connect(this, connectionParams,
                 new Connector.ConnectionListener() {
 
@@ -153,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Throwable throwable) {
+                        Log.d("MainActivity", "Failiure! ");
                         Log.e("MainActivity", throwable.getMessage(), throwable);
 
                         // Something went wrong when attempting to connect! Handle errors here
@@ -164,6 +173,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void connected() {
         // Then we will write some more code here.
+
+        Log.d("MainActivity", "OKAYYYYYY SO THIS RUNSSS");
         if (mood == "high") {
             mSpotifyAppRemote.getPlayerApi().play(runtemp(high));//"spotify:playlist:37i9dQZF1DX6Rl8uES4jYu");//37i9dQZF1DX2sUQwD7tbmL
 
