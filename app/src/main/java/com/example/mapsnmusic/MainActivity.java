@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private static final int REQUEST_CODE = 1337;
+    private static final int REQUEST_CODE =1337;
 
 
     @Override
@@ -80,15 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 fetchdata background = new fetchdata();
                 background.execute();
-
-                //imageView2.setImageResource(imageResource);
-                //String id = background.getID();
                 connected();
-                //startActivity(new Intent(MainActivity.this, Displaypage.class));
-                //loc.setText(id);
-                //onStart();
-
-                // Code For selecting music
 
 
             }
@@ -97,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
-                // Called when a new location is found by the network location provider.
-                //                makeUseOfNewLocation(location);
                 extract(location);
 
 
@@ -138,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        // We will start writing our code here.
         ConnectionParams connectionParams =
                 new ConnectionParams.Builder(CLIENT_ID)
                         .setRedirectUri(REDIRECT_URI)
@@ -154,9 +143,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onConnected(SpotifyAppRemote spotifyAppRemote) {
                         mSpotifyAppRemote = spotifyAppRemote;
                         Log.d("MainActivity", "Connected! Yay!");
-
-                        // Now you can start interacting with App Remote
-                        //connected();
                     }
 
                     @Override
@@ -164,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("MainActivity", "Failiure! ");
                         Log.e("MainActivity", throwable.getMessage(), throwable);
 
-                        // Something went wrong when attempting to connect! Handle errors here
                     }
                 });
 
@@ -202,8 +187,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         SpotifyAppRemote.disconnect(mSpotifyAppRemote);
     }
-
-    // Aaand we will finish off here.
 
 
     class fetchdata extends AsyncTask<Void, Void, String[]> {
